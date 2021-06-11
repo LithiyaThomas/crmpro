@@ -4,7 +4,8 @@ from . models import Customer
 from . models import Items
 from . models import Billaddress
 from . models import Item_groups
-from . forms import CustomerForm
+from . forms import CustomerForm,ItemForm
+from django.shortcuts import redirect
 
 
 # Create your views here.
@@ -28,6 +29,8 @@ def add(request):
         customer.save()
     return render(request,"index.html",{'customer1':customer1})
 def itemadd(request):
+    item1=Items.objects.all()
+
     if request.method == 'POST':
         description=request.POST.get('description','')
         long_description = request.POST.get('long_description','')
@@ -37,7 +40,7 @@ def itemadd(request):
         unit = request.POST.get('unit','')
         items=Items(description=description,long_description=long_description,rate=rate,tax1=tax1,tax2=tax2,unit=unit)
         items.save()
-    return render(request,"customer.html")
+    return render(request,"customer.html",{'item1':item1})
 def itemgroups(request):
     if request.method == 'POST':
         name = request.POST.get('name', '')
@@ -64,7 +67,7 @@ def billadd(request):
 def delete(request,id):
     customer=Customer.objects.get(id=id)
     if request.method == 'POST':
-        Customer.delete()
+        customer.delete()
         return redirect('/')
     return render(request,'delete.html')
 def update(request,id):
@@ -74,3 +77,17 @@ def update(request,id):
         form.save()
         return redirect('/')
     return render(request, 'edit.html', {'form': form, 'customer': customer})
+
+def delete1(request,iid):
+    item=Items.objects.get(iid=iid)
+    if request.method == 'POST':
+        item.delete()
+        return redirect('/')
+    return render(request,'delete.html')
+def update1(request,id):
+    item=Items.objects.get(id=id)
+    form = ItemForm(request.POST or None, instance=item)
+    if form.is_valid():
+        form.save()
+        return redirect('/')
+    return render(request, 'edit.html', {'form':form, 'item':item})

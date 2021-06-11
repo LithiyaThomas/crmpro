@@ -241,6 +241,26 @@
             <span class="btn-block">
           <button type="submit" href="/">SAVE</button>
         </span>
+          <div class="col-md-6">
+            <h4>Item details</h4>
+            {% for j in item1 %}
+               <div class="shadow card">
+                <div class="card-body">
+                    <h5 class="card-title">{{j.description}}</h5>
+                    <h5 class="card-title">{{j.long_description}}</h5>
+                    <h5 class="card-title">{{j.rate}}</h5>
+                    <h5 class="card-title">{{j.tax1}}</h5>
+                    <h5 class="card-title">{{j.tax2}}</h5>
+                    <h5 class="card-title">{{j.unit}}</h5>
+
+                    <a class="btn btn-danger" href="{% url 'delete1' j.id %}">Delete</a>
+                    <a class="btn btn-warning" href="{% url 'update1' j.id %}">Update</a>
+
+                </div>
+            </div>
+             <br><br>
+            {% endfor %}
+        </div>
       </form>
     </div>
   </body>

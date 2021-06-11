@@ -9,4 +9,6 @@ urlpatterns = [
     path('bill/', views.billadd, name='billadd'),
     path('delete/<int:id>/', views.delete, name='delete'),
     path('update/<int:id>/', views.update, name='update'),
+    path('delete/<int:id>/', views.delete1, name='delete1'),
+    path('update1/<int:id>/', views.update1, name='update1'),
 ]
