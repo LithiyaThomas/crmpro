@@ -248,77 +248,365 @@
 
 <select id="country" name="country">
    <option value="Afganistan">Afghanistan</option>
-   <option value="Albania">Albania</option>
-   <option value="Algeria">Algeria</option>
-   <option value="American Samoa">American Samoa</option>
-   <option value="Andorra">Andorra</option>
-   <option value="Angola">Angola</option>
-   <option value="Anguilla">Anguilla</option>
-   <option value="Antigua & Barbuda">Antigua & Barbuda</option>
-   <option value="Argentina">Argentina</option>
-   <option value="Armenia">Armenia</option>
-   <option value="Aruba">Aruba</option>
-   <option value="Australia">Australia</option>
-   <option value="Austria">Austria</option>
-   <option value="Azerbaijan">Azerbaijan</option>
-   <option value="Bahamas">Bahamas</option>
-   <option value="Bahrain">Bahrain</option>
-   <option value="Bangladesh">Bangladesh</option>
-   <option value="Barbados">Barbados</option>
-   <option value="Belarus">Belarus</option>
-   <option value="Belgium">Belgium</option>
-   <option value="Belize">Belize</option>
-   <option value="Benin">Benin</option>
-   <option value="Bermuda">Bermuda</option>
-   <option value="Bhutan">Bhutan</option>
-   <option value="Bolivia">Bolivia</option>
-   <option value="Bonaire">Bonaire</option>
-   <option value="Bosnia & Herzegovina">Bosnia & Herzegovina</option>
-   <option value="Botswana">Botswana</option>
-   <option value="Brazil">Brazil</option>
-   <option value="British Indian Ocean Ter">British Indian Ocean Ter</option>
-   <option value="Brunei">Brunei</option>
-   <option value="Bulgaria">Bulgaria</option>
-   <option value="Burkina Faso">Burkina Faso</option>
-   <option value="Burundi">Burundi</option>
-   <option value="Cambodia">Cambodia</option>
-   <option value="Cameroon">Cameroon</option>
-   <option value="Canada">Canada</option>
-   <option value="Canary Islands">Canary Islands</option>
-   <option value="Cape Verde">Cape Verde</option>
-   <option value="Cayman Islands">Cayman Islands</option>
-   <option value="Central African Republic">Central African Republic</option>
-   <option value="Chad">Chad</option>
-   <option value="Channel Islands">Channel Islands</option>
-   <option value="Chile">Chile</option>
-   <option value="China">China</option>
-   <option value="Christmas Island">Christmas Island</option>
-   <option value="Cocos Island">Cocos Island</option>
-   <option value="Colombia">Colombia</option>
-   <option value="Comoros">Comoros</option>
-   <option value="Congo">Congo</option>
-   <option value="Cook Islands">Cook Islands</option>
-   <option value="Costa Rica">Costa Rica</option>
-   <option value="Cote DIvoire">Cote DIvoire</option>
-   <option value="Croatia">Croatia</option>
-   <option value="Cuba">Cuba</option>
-   <option value="Curaco">Curacao</option>
-   <option value="Cyprus">Cyprus</option>
-   <option value="Czech Republic">Czech Republic</option>
-   <option value="Denmark">Denmark</option>
-   <option value="Djibouti">Djibouti</option>
-   <option value="Dominica">Dominica</option>
-   <option value="Dominican Republic">Dominican Republic</option>
-   <option value="East Timor">East Timor</option>
-   <option value="Ecuador">Ecuador</option>
-   <option value="Egypt">Egypt</option>
-   <option value="El Salvador">El Salvador</option>
-   <option value="Equatorial Guinea">Equatorial Guinea</option>
-   <option value="Eritrea">Eritrea</option>
-   <option value="Estonia">Estonia</option>
-   <option value="Ethiopia">Ethiopia</option>
-   <option value="Falkland Islands">Falkland Islands</option>
-   <option value="Faroe Islands">Faroe Islands</option>
+    {% if country == "Albania" %}
+   <option value="Albania" selected>Albania</option>
+    {% else %}
+     <option value="Albania">Albania</option>
+    {% endif %}
+    {% if country == "Algeria" %}
+    <option value="Algeria" selected>Algeria</option>
+    {% else %}
+    <option value="Algeria">Algeria</option>
+    {% endif %}
+    {% if country == "American Samoa" %}
+   <option value="American Samoa" selected>American Samoa</option>
+    {% else %}
+    <option value="American Samoa">American Samoa</option>
+    {% endif %}
+    {% if country == "Andorra" %}
+   <option value="Andorra" selected>Andorra</option>
+    {% else %}
+    <option value="Andorra">Andorra</option>
+    {% endif %}
+    {% if country == "Angola" %}
+    <option value="Angola" selected>Angola</option>
+    {% else %}
+    <option value="Angola">Angola</option>
+    {% endif %}
+    {% if country == "Anguilla" %}
+   <option value="Anguilla" selected>Anguilla</option>
+    {% else %}
+    <option value="Anguilla">Anguilla</option>
+    {% endif %}
+    {% if country == "Antigua & Barbuda" %}
+   <option value="Antigua & Barbuda" selected>Antigua & Barbuda</option>
+    {% else %}
+    <option value="Antigua & Barbuda">Antigua & Barbuda</option>
+    {% endif %}
+    {% if country == "Argentina" %}
+   <option value="Argentina" selected>Argentina</option>
+    {% else %}
+    <option value="Argentina">Argentina</option>
+    {% endif %}
+    {% if country == "Armenia" %}
+   <option value="Armenia" selected>Armenia</option>
+    {% else %}
+    <option value="Armenia">Armenia</option>
+    {% endif %}
+    {% if country == "Aruba" %}
+   <option value="Aruba" selected>Aruba</option>
+    {% else %}
+    <option value="Aruba">Aruba</option>
+    {% endif %}
+    {% if country == "Australia" %}
+   <option value="Australia" selected>Australia</option>
+    {% else %}
+    <option value="Australia">Australia</option>
+    {% endif %}
+    {% if country == "Austria" %}
+   <option value="Austria" selected>Austria</option>
+    {% else %}
+    <option value="Austria">Austria</option>
+    {% endif %}
+    {% if country == "Azerbaijan" %}
+   <option value="Azerbaijan" selected>Azerbaijan</option>
+    {% else %}
+    <option value="Azerbaijan">Azerbaijan</option>
+    {% endif %}
+    {% if country == "Bahamas" %}
+   <option value="Bahamas" selected>Bahamas</option>
+    {% else %}
+    <option value="Bahamas">Bahamas</option>
+    {% endif %}
+    {% if country == "Bahrain" %}
+   <option value="Bahrain" selected>Bahrain</option>
+    {% else %}
+    <option value="Bahrain">Bahrain</option>
+    {% endif %}
+    {% if country == "Bangladesh" %}
+   <option value="Bangladesh" selected>Bangladesh</option>
+    {% else %}
+    <option value="Bangladesh">Bangladesh</option>
+    {% endif %}
+    {% if country == "Barbados" %}
+   <option value="Barbados" selected>Barbados</option>
+    {% else %}
+    <option value="Barbados">Barbados</option>
+    {% endif %}
+    {% if country == "Belarus" %}
+   <option value="Belarus" selected>Belarus</option>
+    {% else %}
+    <option value="Belarus">Belarus</option>
+    {% endif %}
+    {% if country == "Belgium" %}
+   <option value="Belgium" selected>Belgium</option>
+    {% else %}
+    <option value="Belgium">Belgium</option>
+    {% endif %}
+    {% if country == "Belize" %}
+   <option value="Belize" selected>Belize</option>
+    {% else %}
+    <option value="Belize">Belize</option>
+    {% endif %}
+    {% if country == "Benin" %}
+   <option value="Benin" selected>Benin</option>
+    {% else %}
+    <option value="Benin">Benin</option>
+    {% endif %}
+    {% if country == "Bermuda" %}
+   <option value="Bermuda" selected>Bermuda</option>
+    {% else %}
+    <option value="Bermuda">Bermuda</option>
+    {% endif %}
+    {% if country == "Bhutan" %}
+   <option value="Bhutan" selected>Bhutan</option>
+    {% else %}
+    <option value="Bhutan">Bhutan</option>
+    {% endif %}
+    {% if country == "Bolivia" %}
+   <option value="Bolivia" selected>Bolivia</option>
+    {% else %}
+    <option value="Bolivia">Bolivia</option>
+    {% endif %}
+    {% if country == "Bonaire" %}
+   <option value="Bonaire" selected>Bonaire</option>
+    {% else %}
+    <option value="Bonaire">Bonaire</option>
+    {% endif %}
+    {% if country == "Bosnia & Herzegovina" %}
+   <option value="Bosnia & Herzegovina" selected>Bosnia & Herzegovina</option>
+    {% else %}
+    <option value="Bosnia & Herzegovina">Bosnia & Herzegovina</option>
+    {% endif %}
+    {% if country == "Botswana" %}
+   <option value="Botswana" selected>Botswana</option>
+    {% else %}
+    <option value="Botswana">Botswana</option>
+    {% endif %}
+    {% if country == "Brazil" %}
+   <option value="Brazil" selected>Brazil</option>
+    {% else %}
+    <option value="Brazil">Brazil</option>
+    {% endif %}
+    {% if country == "British Indian Ocean Ter" %}
+   <option value="British Indian Ocean Ter" selected>British Indian Ocean Ter</option>
+    {% else %}
+    <option value="British Indian Ocean Ter">British Indian Ocean Ter</option>
+    {% endif %}
+    {% if country == "Brunei" %}
+   <option value="Brunei" selected>Brunei</option>
+    {% else %}
+    <option value="Brunei">Brunei</option>
+    {% endif %}
+    {% if country == "Bulgaria" %}
+   <option value="Bulgaria" selected>Bulgaria</option>
+    {% else %}
+    <option value="Bulgaria">Bulgaria</option>
+    {% endif %}
+    {% if country == "Burkina Faso" %}
+   <option value="Burkina Faso" selected>Burkina Faso</option>
+    {% else %}
+    <option value="Burkina Faso">Burkina Faso</option>
+    {% endif %}
+    {% if country == "Burundi" %}
+   <option value="Burundi" selected>Burundi</option>
+    {% else %}
+    <option value="Burundi">Burundi</option>
+    {% endif %}
+    {% if country == "Cambodia" %}
+   <option value="Cambodia" selected>Cambodia</option>
+    {% else %}
+    <option value="Cambodia">Cambodia</option>
+    {% endif %}
+    {% if country == "Cameroon" %}
+   <option value="Cameroon" selected>Cameroon</option>
+    {% else %}
+    <option value="Cameroon">Cameroon</option>
+    {% endif %}
+    {% if country == "Canada" %}
+   <option value="Canada" selected>Canada</option>
+    {% else %}
+    <option value="Canada">Canada</option>
+    {% endif %}
+    {% if country == "Canary Islands" %}
+   <option value="Canary Islands" selected>Canary Islands</option>
+    {% else %}
+    <option value="Canary Islands">Canary Islands</option>
+    {% endif %}
+    {% if country == "Cape Verde" %}
+   <option value="Cape Verde" selected>Cape Verde</option>
+    {% else %}
+    <option value="Cape Verde">Cape Verde</option>
+    {% endif %}
+    {% if country == "Cayman Islands" %}
+   <option value="Cayman Islands" selected>Cayman Islands</option>
+    {% else %}
+    <option value="Cayman Islands">Cayman Islands</option>
+    {% endif %}
+    {% if country == "Central African Republic" %}
+   <option value="Central African Republic" selected>Central African Republic</option>
+    {% else %}
+    <option value="Central African Republic">Central African Republic</option>
+    {% endif %}
+    {% if country == "Chad" %}
+   <option value="Chad" selected>Chad</option>
+    {% else %}
+    <option value="Chad">Chad</option>
+    {% endif %}
+    {% if country == "Channel Islands" %}
+   <option value="Channel Islands" selected>Channel Islands</option>
+    {% else %}
+    <option value="Channel Islands">Channel Islands</option>
+    {% endif %}
+    {% if country == "Chile" %}
+   <option value="Chile" selected>Chile</option>
+    {% else %}
+    <option value="Chile">Chile</option>
+    {% endif %}
+    {% if country == "China" %}
+   <option value="China" selected>China</option>
+    {% else %}
+    <option value="China">China</option>
+    {% endif %}
+    {% if country == "Christmas Island" %}
+   <option value="Christmas Island" selected>Christmas Island</option>
+    {% else %}
+    <option value="Christmas Island">Christmas Island</option>
+    {% endif %}
+    {% if country == "Cocos Island" %}
+   <option value="Cocos Island" selected>Cocos Island</option>
+    {% else %}
+    <option value="Cocos Island">Cocos Island</option>
+    {% endif %}
+    {% if country == "Colombia" %}
+   <option value="Colombia" selected>Colombia</option>
+    {% else %}
+    <option value="Colombia">Colombia</option>
+    {% endif %}
+    {% if country == "Comoros" %}
+   <option value="Comoros" selected>Comoros</option>
+    {% else %}
+    <option value="Comoros">Comoros</option>
+    {% endif %}
+    {% if country == "Congo" %}
+   <option value="Congo" selected>Congo</option>
+    {% else %}
+    <option value="Congo">Congo</option>
+    {% endif %}
+    {% if country == "Cook Islands" %}
+   <option value="Cook Islands" selected>Cook Islands</option>
+    {% else %}
+    <option value="Cook Islands">Cook Islands</option>
+    {% endif %}
+    {% if country == "Costa Rica" %}
+   <option value="Costa Rica" selected>Costa Rica</option>
+    {% else %}
+    <option value="Costa Rica">Costa Rica</option>
+    {% endif %}
+    {% if country == "Cote DIvoire" %}
+   <option value="Cote DIvoire" selected>Cote DIvoire</option>
+    {% else %}
+    <option value="Cote DIvoire">Cote DIvoire</option>
+    {% endif %}
+    {% if country == "Croatia" %}
+   <option value="Croatia" selected>Croatia</option>
+    {% else %}
+    <option value="Croatia">Croatia</option>
+    {% endif %}
+    {% if country == "Cuba" %}
+   <option value="Cuba" selected>Cuba</option>
+    {% else %}
+    <option value="Cuba">Cuba</option>
+    {% endif %}
+    {% if country == "Curaco" %}
+   <option value="Curaco" selected>Curaco</option>
+    {% else %}
+    <option value="Curaco">Curaco</option>
+    {% endif %}
+    {% if country == "Cyprus" %}
+   <option value="Cyprus" selected>Cyprus</option>
+    {% else %}
+    <option value="Cyprus">Cyprus</option>
+    {% endif %}
+    {% if country == "Czech Republic" %}
+   <option value="Czech Republic" selected>Czech Republic</option>
+    {% else %}
+    <option value="Czech Republic">Czech Republic</option>
+    {% endif %}
+    {% if country == "Denmark" %}
+   <option value="Denmark" selected>Denmark</option>
+    {% else %}
+    <option value="Denmark">Denmark</option>
+    {% endif %}
+    {% if country == "Djibouti" %}
+   <option value="Djibouti" selected>Djibouti</option>
+    {% else %}
+    <option value="Djibouti">Djibouti</option>
+    {% endif %}
+    {% if country == "Dominica" %}
+   <option value="Dominica" selected>Dominica</option>
+    {% else %}
+    <option value="Dominica">Dominica</option>
+    {% endif %}
+    {% if country == "Dominican Republic" %}
+   <option value="Dominican Republic" selected>Dominican Republic</option>
+    {% else %}
+    <option value="Dominican Republic">Dominican Republic</option>
+    {% endif %}
+    {% if country == "East Timor" %}
+   <option value="East Timor" selected>East Timor</option>
+    {% else %}
+    <option value="East Timor">East Timor</option>
+    {% endif %}
+    {% if country == "Ecuador" %}
+   <option value="Ecuador" selected>Ecuador</option>
+    {% else %}
+    <option value="Ecuador">Ecuador</option>
+    {% endif %}
+    {% if country == "Egypt" %}
+   <option value="Egypt" selected>Egypt</option>
+    {% else %}
+    <option value="Egypt">Egypt</option>
+    {% endif %}
+    {% if country == "El Salvador" %}
+   <option value="El Salvador" selected>El Salvador</option>
+    {% else %}
+    <option value="El Salvador">El Salvador</option>
+    {% endif %}
+    {% if country == "Equatorial Guinea" %}
+   <option value="Equatorial Guinea" selected>Equatorial Guinea</option>
+    {% else %}
+    <option value="Equatorial Guinea">Equatorial Guinea</option>
+    {% endif %}
+    {% if country == "Eritrea" %}
+   <option value="Eritrea" selected>Eritrea</option>
+    {% else %}
+    <option value="Eritrea">Eritrea</option>
+    {% endif %}
+    {% if country == "Estonia" %}
+   <option value="Estonia" selected>Estonia</option>
+    {% else %}
+    <option value="Estonia">Estonia</option>
+    {% endif %}
+    {% if country == "Ethiopia" %}
+   <option value="Ethiopia" selected>Ethiopia</option>
+    {% else %}
+    <option value="Ethiopia">Ethiopia</option>
+    {% endif %}
+    {% if country == "Falkland Islands" %}
+   <option value="Falkland Islands" selected>Falkland Islands</option>
+    {% else %}
+    <option value="Falkland Islands">Falkland Islands</option>
+    {% endif %}
+     {% if country == "Faroe Islands" %}
+   <option value="Faroe Islands" selected>Faroe Islands</option>
+    {% else %}
+    <option value="Faroe Islands">Faroe Islands</option>
+    {% endif %}
+
+
+
+
    <option value="Fiji">Fiji</option>
    <option value="Finland">Finland</option>
    <option value="France">France</option>
@@ -506,7 +794,7 @@
           </div>
           <div class="item">
             <label for="language">Default Language<span>*</span></label>
-            <select data-placeholder="Choose a Language..." id="language">
+            <select data-placeholder="Choose a Language..." id="language" name="language">
   <option value="AF">Afrikaans</option>
   <option value="SQ">Albanian</option>
   <option value="AR">Arabic</option>
@@ -589,9 +877,35 @@
         </span>
 
 
-            <span class="align-right">
-          <button type="submit" href="/">SAVE AND CREATE CONTACT</button>
-        </span>
+<!--            <span class="align-right">-->
+<!--          <button type="submit" href="/">SAVE AND CREATE CONTACT</button>-->
+<!--        </span>-->
+           <div class="col-md-6">
+            <h4>Customer details</h4>
+            {% for i in customer1 %}
+
+            <div class="shadow card">
+                <div class="card-body">
+                    <h5 class="card-title">{{i.company}}</h5>
+                    <h5 class="card-title">{{i.VAT}}</h5>
+                    <h5 class="card-title">{{i.phone}}</h5>
+                    <h5 class="card-title">{{i.website}}</h5>
+                    <h5 class="card-title">{{i.groups}}</h5>
+                    <h5 class="card-title">{{i.currency}}</h5>
+                    <h5 class="card-title">{{i.language}}</h5>
+                    <h5 class="card-title">{{i.address}}</h5>
+                    <h5 class="card-title">{{i.city}}</h5>
+                    <h5 class="card-title">{{i.state}}</h5>
+                    <h5 class="card-title">{{i.zipcode}}</h5>
+                    <h5 class="card-title">{{i.country}}</h5>
+                    <a class="btn btn-danger" href="{% url 'delete' i.id %}">Delete</a>
+                    <a class="btn btn-warning" href="{% url 'update' i.id %}">Update</a>
+
+                </div>
+            </div>
+             <br><br>
+            {% endfor %}
+        </div>
 
       </form>
     </div>

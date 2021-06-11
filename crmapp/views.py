@@ -4,8 +4,13 @@ from . models import Customer
 from . models import Items
 from . models import Billaddress
 from . models import Item_groups
+from . forms import CustomerForm
+
+
 # Create your views here.
 def add(request):
+    customer1=Customer.objects.all()
+
     if request.method == 'POST':
         company=request.POST.get('company','')
         VAT = request.POST.get('VAT','')
@@ -21,7 +26,7 @@ def add(request):
         country = request.POST.get('country','')
         customer=Customer(company=company,VAT=VAT,phone=phone,website=website,groups=groups,currency=currency,language=language,address=address,city=city,state=state,zipcode=zipcode,country=country)
         customer.save()
-    return render(request,"index.html")
+    return render(request,"index.html",{'customer1':customer1})
 def itemadd(request):
     if request.method == 'POST':
         description=request.POST.get('description','')
@@ -56,3 +61,16 @@ def billadd(request):
         billaddress = Billaddress(bill_street=bill_street, bill_city=bill_city, bill_state=bill_state, bill_zipcode=bill_zipcode, bill_country=bill_country,ship_street=ship_street,ship_city=ship_city,ship_state=ship_state,ship_zipcode=ship_zipcode,ship_country=ship_country)
         billaddress.save()
     return render(request,"billing.html")
+def delete(request,id):
+    customer=Customer.objects.get(id=id)
+    if request.method == 'POST':
+        Customer.delete()
+        return redirect('/')
+    return render(request,'delete.html')
+def update(request,id):
+    customer=Customer.objects.get(id=id)
+    form = CustomerForm(request.POST or None, instance=customer)
+    if form.is_valid():
+        form.save()
+        return redirect('/')
+    return render(request, 'edit.html', {'form': form, 'customer': customer})
