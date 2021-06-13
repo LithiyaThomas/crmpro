@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from . models import Customer
-from . models import Items
+from . models import Customer,Estimates
+from . models import Items,Invoice
 from . models import Billaddress,Proposal
 from . models import Item_groups
 from . forms import CustomerForm,ItemForm
@@ -112,7 +112,36 @@ def proposal(request):
         proposals = Proposal(subject=subject, related=related, date=date, open_till=open_till, status=status,assigned=assigned,discount_type=discount_type,currency=currency,to=to,address=address,city=city,state=state,zipcode=zipcode,country=country,email=email,phone=phone)
         proposals.save()
     return render(request, "proposal.html")
-def invoice(request):
-    return render(request, "invoice.html")
+
 def estimate(request):
+    if request.method == 'POST':
+        estimate_no = request.POST.get('estimate_no', '')
+        expiry_date = request.POST.get('expiry_date', '')
+        estimate_date = request.POST.get('estimate_date', '')
+        status1 = request.POST.get('status1', '')
+        reference = request.POST.get('reference', '')
+        discount_type1 = request.POST.get('discount_type1', '')
+        currency1 = request.POST.get('currency1', '')
+        sale_agent = request.POST.get('sale_agent', '')
+        admin_note = request.POST.get('admin_note', '')
+
+        estimates = Estimates(estimate_no=estimate_no, expiry_date=expiry_date, estimate_date=estimate_date, status1=status1, reference=reference,discount_type1=discount_type1,currency1=currency1,sale_agent=sale_agent,admin_note=admin_note)
+        estimates.save()
     return render(request, "estimate.html")
+def invoice(request):
+    if request.method == 'POST':
+        invoice_no = request.POST.get('invoice_no', '')
+        due_date = request.POST.get('due_date', '')
+        invoice_date = request.POST.get('invoice_date', '')
+        modes = request.POST.get('modes', '')
+        recurring = request.POST.get('recurring', '')
+        discount_type2 = request.POST.get('discount_type2', '')
+        currency2 = request.POST.get('currency2', '')
+        sale_agent1 = request.POST.get('sale_agent1', '')
+        admin_note1 = request.POST.get('admin_note1', '')
+
+        invoices = Invoice(invoice_no=invoice_no, due_date=due_date, invoice_date=invoice_date,
+                             modes=modes, recurring=recurring, discount_type2=discount_type2, currency2=currency2,
+                             sale_agent1=sale_agent1,admin_note1=admin_note1)
+        invoices.save()
+    return render(request, "invoice.html")
