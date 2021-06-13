@@ -61,7 +61,7 @@ class Proposal(models.Model):
     zipcode = models.CharField(max_length=25)
     country = models.CharField(max_length=100)
     email = models.CharField(max_length=50)
-    ph = models.IntegerField()
+    phone = models.IntegerField()
     def __str__(self):
         return self.subject
 class Estimates(models.Model):

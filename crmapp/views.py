@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from . models import Customer
 from . models import Items
-from . models import Billaddress
+from . models import Billaddress,Proposal
 from . models import Item_groups
 from . forms import CustomerForm,ItemForm
 from django.shortcuts import redirect
@@ -92,6 +92,25 @@ def update1(request,id):
         return redirect('/')
     return render(request, 'edit.html', {'form':form, 'item':item})
 def proposal(request):
+    if request.method == 'POST':
+        subject = request.POST.get('subject', '')
+        related = request.POST.get('related', '')
+        date = request.POST.get('date', '')
+        open_till = request.POST.get('open_till', '')
+        status = request.POST.get('status', '')
+        assigned = request.POST.get('assigned', '')
+        discount_type = request.POST.get('discount_type', '')
+        currency = request.POST.get('currency', '')
+        to = request.POST.get('to', '')
+        address = request.POST.get('address', '')
+        city = request.POST.get('city', '')
+        state = request.POST.get('state', '')
+        zipcode = request.POST.get('zipcode', '')
+        country = request.POST.get('country', '')
+        email = request.POST.get('email', '')
+        phone = request.POST.get('ph', '')
+        proposals = Proposal(subject=subject, related=related, date=date, open_till=open_till, status=status,assigned=assigned,discount_type=discount_type,currency=currency,to=to,address=address,city=city,state=state,zipcode=zipcode,country=country,email=email,phone=phone)
+        proposals.save()
     return render(request, "proposal.html")
 def invoice(request):
     return render(request, "invoice.html")
