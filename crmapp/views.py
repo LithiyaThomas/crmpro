@@ -91,3 +91,5 @@ def update1(request,id):
         form.save()
         return redirect('/')
     return render(request, 'edit.html', {'form':form, 'item':item})
+def proposal(request):
+    return render(request, "proposal.html")

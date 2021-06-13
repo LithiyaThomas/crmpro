@@ -45,3 +45,47 @@ class Billaddress(models.Model):
     ship_country = models.CharField(max_length=100)
     def __str__(self):
         return self.bill_street
+class Proposal(models.Model):
+    subject= models.CharField(max_length=150)
+    related = models.CharField(max_length=150)
+    date= models.DateField()
+    open_till = models.DateField()
+    status = models.CharField(max_length=100)
+    assigned = models.CharField(max_length=150)
+    discount_type = models.CharField(max_length=150)
+    currency = models.CharField(max_length=150)
+    to =models.CharField(max_length=100)
+    address = models.TextField(max_length=150)
+    city = models.CharField(max_length=150)
+    state = models.CharField(max_length=150)
+    zipcode = models.CharField(max_length=25)
+    country = models.CharField(max_length=100)
+    email = models.CharField(max_length=50)
+    ph = models.IntegerField()
+    def __str__(self):
+        return self.subject
+class Estimates(models.Model):
+    estimate_no = models.IntegerField()
+    expiry_date= models.DateField()
+    estimate_date = models.DateField()
+    status1 = models.CharField(max_length=100)
+    reference = models.CharField(max_length=150)
+    discount_type1 = models.CharField(max_length=150)
+    currency1 = models.CharField(max_length=150)
+    sale_agent =models.CharField(max_length=100)
+    admin_note = models.TextField(max_length=150)
+
+    def __str__(self):
+        return self.estimate_no
+class Invoice(models.Model):
+    invoice_no = models.IntegerField()
+    due_date= models.DateField()
+    invoice_date = models.DateField()
+    recurring = models.CharField(max_length=150)
+    discount_type2 = models.CharField(max_length=150)
+    currency2 = models.CharField(max_length=150)
+    sale_agent1 =models.CharField(max_length=100)
+    admin_note1 = models.TextField(max_length=150)
+
+    def __str__(self):
+        return self.invoice_no
