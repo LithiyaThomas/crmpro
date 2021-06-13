@@ -204,44 +204,45 @@
       <form action="/" method="post">
         {% csrf_token %}
         <div class="banner">
-          <h1>New Invoice Registration</h1>
+          <h1>New Estimate Registration</h1>
         </div>
         <div class="colums">
           <div class="item">
-            <label for="invoice_no"> Invoice Number<span>*</span></label>
-            <input id="invoice_no" type="text" name="invoice_no" required/>
+            <label for="estimate_no"> Estimate Number<span>*</span></label>
+            <input id="estimate_no" type="text" name="estimate_no" required/>
           </div>
           <div class="item">
-            <label for="invoice_date"> Invoice Date<span>*</span></label>
-            <input id="invoice_date" type="date" name="invoice_date" required/>
+            <label for="estimate_date"> Estimate Date<span>*</span></label>
+            <input id="estimate_date" type="date" name="estimate_date" required/>
           </div>
           <div class="item">
-            <label for="due_date">Due Date<span>*</span></label>
-            <input id="due_date" type="date"   name="due_date" required/>
+            <label for="expiry_date">Expiry Date<span>*</span></label>
+            <input id="expiry_date" type="date"   name="expiry_date" required/>
+          </div>
+            <div class="item">
+            <label for="currency1">Currency<span>*</span></label>
+            <input id="currency1" type="text"   name="currency1" required/>
+          </div>
+            <div class="item">
+            <label for="status1">Status<span>*</span></label>
+            <input id="status1" type="text"   name="status1" required/>
+          </div>
+             <div class="item">
+            <label for="reference">Reference<span>*</span></label>
+            <input id="reference" type="text"   name="reference" required/>
           </div>
           <div class="item">
-            <label for="modes">Allowed payment modes for this invoice<span>*</span></label>
-            <input id="modes" type="text"   name="modes" required/>
+            <label for="sale_agent">Sale Agent<span>*</span></label>
+            <input id="sale_agent" type="text" name="sale_agent" required/>
+          </div>
+
+          <div class="item">
+            <label for="discount_type1">Discount Type<span>*</span></label>
+            <input id="discount_type1" type="text"   name="discount_type1" required/>
           </div>
           <div class="item">
-            <label for="currency2">Currency<span>*</span></label>
-            <input id="currency2" type="text"   name="currency2" required/>
-          </div>
-          <div class="item">
-            <label for="sale_agent1">Sale Agent<span>*</span></label>
-            <input id="sale_agent1" type="text" name="sale_agent1" required/>
-          </div>
-          <div class="item">
-            <label for="recurring">Recurring Invoice?<span>*</span></label>
-            <input id="recurring" type="text"   name="recurring" required/>
-          </div>
-          <div class="item">
-            <label for="discount_type2">Discount Type<span>*</span></label>
-            <input id="discount_type2" type="text"   name="discount_type2" required/>
-          </div>
-          <div class="item">
-            <label for="admin_note1">Admin Note<span>*</span></label>
-            <input id="admin_note1" type="text"   name="admin_note1" required/>
+            <label for="admin_note">Admin Note<span>*</span></label>
+            <input id="admin_note" type="text"   name="admin_note" required/>
           </div>
         </div>
           <span class="align-right">

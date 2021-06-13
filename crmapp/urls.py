@@ -13,5 +13,5 @@ urlpatterns = [
     path('update1/<int:id>/', views.update1, name='update1'),
     path('proposal/', views.proposal, name='proposal'),
     path('invoice/', views.invoice, name='invoice'),
-
+    path('estimate/', views.estimate, name='estimate'),
 ]

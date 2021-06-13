@@ -95,3 +95,5 @@ def proposal(request):
     return render(request, "proposal.html")
 def invoice(request):
     return render(request, "invoice.html")
+def estimate(request):
+    return render(request, "estimate.html")
