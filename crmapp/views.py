@@ -93,3 +93,5 @@ def update1(request,id):
     return render(request, 'edit.html', {'form':form, 'item':item})
 def proposal(request):
     return render(request, "proposal.html")
+def invoice(request):
+    return render(request, "invoice.html")
