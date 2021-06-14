@@ -4,7 +4,7 @@ from . models import Customer,Estimates
 from . models import Items,Invoice
 from . models import Billaddress,Proposal
 from . models import Item_groups
-from . forms import CustomerForm,ItemForm,ProposalForm
+from . forms import CustomerForm,ItemForm,ProposalForm,EstimateForm
 from django.shortcuts import redirect
 
 
@@ -166,3 +166,16 @@ def update2(request,id):
         form.save()
         return redirect('/')
     return render(request, 'edit.html', {'form':form, 'proposal':proposal})
+def delete3(request,id):
+    estimate=Estimates.objects.get(id=id)
+    if request.method == 'POST':
+        estimate.delete()
+        return redirect('/')
+    return render(request,'delete.html')
+def update3(request,id):
+    estimate=Estimates.objects.get(id=id)
+    form = EstimateForm(request.POST or None, instance=estimate)
+    if form.is_valid():
+        form.save()
+        return redirect('/')
+    return render(request, 'edit.html', {'form':form, 'estimate':estimate})

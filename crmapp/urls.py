@@ -16,4 +16,6 @@ urlpatterns = [
     path('estimate/', views.estimate, name='estimate'),
     path('delete/<int:id>/', views.delete2, name='delete2'),
     path('update2/<int:id>/', views.update2, name='update2'),
+    path('delete/<int:id>/', views.delete3, name='delete3'),
+    path('update3/<int:id>/', views.update3, name='update3'),
 ]
