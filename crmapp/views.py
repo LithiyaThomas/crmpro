@@ -115,6 +115,8 @@ def proposal(request):
     return render(request, "proposal.html",{'proposal1':proposal1})
 
 def estimate(request):
+    estimate1 = Estimates.objects.all()
+
     if request.method == 'POST':
         estimate_no = request.POST.get('estimate_no', '')
         expiry_date = request.POST.get('expiry_date', '')
@@ -128,21 +130,24 @@ def estimate(request):
 
         estimates = Estimates(estimate_no=estimate_no, expiry_date=expiry_date, estimate_date=estimate_date, status1=status1, reference=reference,discount_type1=discount_type1,currency1=currency1,sale_agent=sale_agent,admin_note=admin_note)
         estimates.save()
-    return render(request, "estimate.html")
+    return render(request, "estimate.html",{'estimate1':estimate1})
+
 def invoice(request):
+    invoice1 = Invoice.objects.all()
+
     if request.method == 'POST':
         invoice_no = request.POST.get('invoice_no', '')
         due_date = request.POST.get('due_date', '')
         invoice_date = request.POST.get('invoice_date', '')
-        modes = request.POST.get('modes', '')
-        recurring = request.POST.get('recurring', '')
+        #recurring = request.POST.get('recurring', '')
         discount_type2 = request.POST.get('discount_type2', '')
         currency2 = request.POST.get('currency2', '')
         sale_agent1 = request.POST.get('sale_agent1', '')
         admin_note1 = request.POST.get('admin_note1', '')
 
         invoices = Invoice(invoice_no=invoice_no, due_date=due_date, invoice_date=invoice_date,
-                             modes=modes, recurring=recurring, discount_type2=discount_type2, currency2=currency2,
+                             # recurring=recurring,
+                           discount_type2=discount_type2, currency2=currency2,
                              sale_agent1=sale_agent1,admin_note1=admin_note1)
         invoices.save()
-    return render(request, "invoice.html")
+    return render(request, "invoice.html",{'invoice1':invoice1})

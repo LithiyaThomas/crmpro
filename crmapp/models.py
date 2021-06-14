@@ -76,12 +76,12 @@ class Estimates(models.Model):
     admin_note = models.TextField(max_length=150)
 
     def __str__(self):
-        return self.estimate_no
+        return self.reference
 class Invoice(models.Model):
     invoice_no = models.IntegerField()
     due_date= models.DateField()
     invoice_date = models.DateField()
-    modes = models.CharField(max_length=30)
+    #modes = models.CharField(max_length=30)
     recurring = models.CharField(max_length=150)
     discount_type2 = models.CharField(max_length=150)
     currency2 = models.CharField(max_length=150)
@@ -89,4 +89,4 @@ class Invoice(models.Model):
     admin_note1 = models.TextField(max_length=150)
 
     def __str__(self):
-        return self.invoice_no
+        return self.recurring
