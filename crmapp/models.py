@@ -81,7 +81,7 @@ class Invoice(models.Model):
     invoice_no = models.IntegerField()
     due_date= models.DateField()
     invoice_date = models.DateField()
-    #modes = models.CharField(max_length=30)
+    # modes = models.CharField(max_length=30)
     recurring = models.CharField(max_length=150)
     discount_type2 = models.CharField(max_length=150)
     currency2 = models.CharField(max_length=150)

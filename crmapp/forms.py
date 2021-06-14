@@ -1,4 +1,4 @@
-from . models import Customer,Items
+from . models import Customer,Items,Proposal,Estimates,Invoice
 from django import forms
 class CustomerForm(forms.ModelForm):
     class Meta:
@@ -9,3 +9,7 @@ class ItemForm(forms.ModelForm):
     class Meta:
         model=Items
         fields=['description','long_description','rate','tax1','tax2','unit']
+class ProposalForm(forms.ModelForm):
+    class Meta:
+        model=Proposal
+        fields=['subject', 'related', 'date','open_till', 'status','assigned','discount_type','currency','to','address','city','state','zipcode','country','email','phone']

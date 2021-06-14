@@ -4,7 +4,7 @@ from . models import Customer,Estimates
 from . models import Items,Invoice
 from . models import Billaddress,Proposal
 from . models import Item_groups
-from . forms import CustomerForm,ItemForm
+from . forms import CustomerForm,ItemForm,ProposalForm
 from django.shortcuts import redirect
 
 
@@ -139,15 +139,30 @@ def invoice(request):
         invoice_no = request.POST.get('invoice_no', '')
         due_date = request.POST.get('due_date', '')
         invoice_date = request.POST.get('invoice_date', '')
-        #recurring = request.POST.get('recurring', '')
+        # modes = request.POST.get('modes', '')
+
+        recurring = request.POST.get('recurring', '')
         discount_type2 = request.POST.get('discount_type2', '')
         currency2 = request.POST.get('currency2', '')
         sale_agent1 = request.POST.get('sale_agent1', '')
         admin_note1 = request.POST.get('admin_note1', '')
 
         invoices = Invoice(invoice_no=invoice_no, due_date=due_date, invoice_date=invoice_date,
-                             # recurring=recurring,
-                           discount_type2=discount_type2, currency2=currency2,
+                           # modes=modes,
+                             recurring=recurring,discount_type2=discount_type2, currency2=currency2,
                              sale_agent1=sale_agent1,admin_note1=admin_note1)
         invoices.save()
     return render(request, "invoice.html",{'invoice1':invoice1})
+def delete2(request,id):
+    proposal=Proposal.objects.get(id=id)
+    if request.method == 'POST':
+        proposal.delete()
+        return redirect('/')
+    return render(request,'delete.html')
+def update2(request,id):
+    proposal=Proposal.objects.get(id=id)
+    form = ProposalForm(request.POST or None, instance=proposal)
+    if form.is_valid():
+        form.save()
+        return redirect('/')
+    return render(request, 'edit.html', {'form':form, 'proposal':proposal})

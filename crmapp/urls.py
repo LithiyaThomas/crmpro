@@ -14,4 +14,6 @@ urlpatterns = [
     path('proposal/', views.proposal, name='proposal'),
     path('invoice/', views.invoice, name='invoice'),
     path('estimate/', views.estimate, name='estimate'),
+    path('delete/<int:id>/', views.delete2, name='delete2'),
+    path('update2/<int:id>/', views.update2, name='update2'),
 ]
