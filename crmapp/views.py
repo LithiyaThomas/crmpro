@@ -179,3 +179,16 @@ def update3(request,id):
         form.save()
         return redirect('/')
     return render(request, 'edit.html', {'form':form, 'estimate':estimate})
+def delete4(request,id):
+    invoice=Invoice.objects.get(id=id)
+    if request.method == 'POST':
+        invoice.delete()
+        return redirect('/')
+    return render(request,'delete.html')
+def update4(request,id):
+    invoice=Invoice.objects.get(id=id)
+    form = EstimateForm(request.POST or None, instance=invoice)
+    if form.is_valid():
+        form.save()
+        return redirect('/')
+    return render(request, 'edit.html', {'form':form, 'estimate':estimate})

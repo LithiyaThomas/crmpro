@@ -17,3 +17,7 @@ class EstimateForm(forms.ModelForm):
     class Meta:
         model=Estimates
         fields=['estimate_no','expiry_date','estimate_date','status1','reference','discount_type1','currency1','sale_agent','admin_note']
+class InvoiceForm(forms.ModelForm):
+    class Meta:
+        model=Invoice
+        fields=['invoice_no','due_date','invoice_date','recurring','discount_type2','currency2','sale_agent1','admin_note1']

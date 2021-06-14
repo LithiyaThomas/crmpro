@@ -18,4 +18,6 @@ urlpatterns = [
     path('update2/<int:id>/', views.update2, name='update2'),
     path('delete/<int:id>/', views.delete3, name='delete3'),
     path('update3/<int:id>/', views.update3, name='update3'),
+    path('delete/<int:id>/', views.delete4, name='delete4'),
+    path('update4/<int:id>/', views.update4, name='update4'),
 ]
