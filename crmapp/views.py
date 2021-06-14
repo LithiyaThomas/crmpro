@@ -92,6 +92,7 @@ def update1(request,id):
         return redirect('/')
     return render(request, 'edit.html', {'form':form, 'item':item})
 def proposal(request):
+    proposal1 = Proposal.objects.all()
     if request.method == 'POST':
         subject = request.POST.get('subject', '')
         related = request.POST.get('related', '')
@@ -111,7 +112,7 @@ def proposal(request):
         phone = request.POST.get('ph', '')
         proposals = Proposal(subject=subject, related=related, date=date, open_till=open_till, status=status,assigned=assigned,discount_type=discount_type,currency=currency,to=to,address=address,city=city,state=state,zipcode=zipcode,country=country,email=email,phone=phone)
         proposals.save()
-    return render(request, "proposal.html")
+    return render(request, "proposal.html",{'proposal1':proposal1})
 
 def estimate(request):
     if request.method == 'POST':
